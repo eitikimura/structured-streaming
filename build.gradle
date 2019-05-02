@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+}
+
+group 'com.wavy'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+apply plugin: 'scala'
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile group: 'org.scala-lang', name: 'scala-library', version: '2.11.12'
+
+    compile group: 'org.apache.spark', name: 'spark-core_2.11', version: '2.4.0'
+    compile group: 'org.apache.spark', name: 'spark-sql_2.11', version: '2.4.0'
+    compile group: 'org.apache.spark', name: 'spark-streaming_2.11', version: '2.4.0'
+    //compile group: 'org.apache.kafka', name: 'kafka-clients', version: '2.2.0'
+    compile group: 'org.apache.spark', name: 'spark-sql-kafka-0-10_2.11', version: '2.4.0'
+
+    compile 'org.slf4j:slf4j-api:1.7.18'
+    compile 'org.slf4j:log4j-over-slf4j:1.7.18'
+    compile 'ch.qos.logback:logback-classic:1.1.6'
+}
